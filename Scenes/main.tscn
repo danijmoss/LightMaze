@@ -3,9 +3,15 @@
 [sub_resource type="BoxMesh" id="BoxMesh_xwulq"]
 size = Vector3(20, 0.5, 20)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwulq"]
+size = Vector3(20, 0.5, 20)
+
 [node name="Main" type="Node" unique_id=593952978]
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=936259478]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1344141120]
 mesh = SubResource("BoxMesh_xwulq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=101759289]
+shape = SubResource("BoxShape3D_xwulq")
