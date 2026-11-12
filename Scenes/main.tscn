@@ -9,6 +9,15 @@ size = Vector3(20, 0.5, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xwulq"]
 size = Vector3(20, 0.5, 20)
 
+[sub_resource type="BoxMesh" id="BoxMesh_75tvu"]
+size = Vector3(6, 2, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnkce"]
+albedo_color = Color(0.03807642, 0.40533966, 0.0681306, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75tvu"]
+size = Vector3(6, 2, 0.5)
+
 [node name="Main" type="Node" unique_id=593952978]
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=936259478]
@@ -28,3 +37,13 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1161116856]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 0, 0)
+
+[node name="Wall" type="StaticBody3D" parent="." unique_id=9039181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.25, -3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall" unique_id=900591945]
+mesh = SubResource("BoxMesh_75tvu")
+surface_material_override/0 = SubResource("StandardMaterial3D_wnkce")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=963011594]
+shape = SubResource("BoxShape3D_75tvu")
