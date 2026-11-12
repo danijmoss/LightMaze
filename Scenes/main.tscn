@@ -47,3 +47,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wnkce")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=963011594]
 shape = SubResource("BoxShape3D_75tvu")
+
+[node name="Wall2" type="StaticBody3D" parent="." unique_id=1909381729]
+transform = Transform3D(-4.371139e-08, 0.104528464, 0.9945219, 0, 0.9945219, -0.104528464, -1, -4.5690842e-09, -4.3471935e-08, 3, 1.25, -3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall2" unique_id=299721776]
+mesh = SubResource("BoxMesh_75tvu")
+surface_material_override/0 = SubResource("StandardMaterial3D_wnkce")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2" unique_id=1105738975]
+shape = SubResource("BoxShape3D_75tvu")
