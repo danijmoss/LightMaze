@@ -45,9 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.25, -9)
 [node name="Wall_TopLeft02" parent="Maze/OuterWalls/Top" unique_id=18534947 instance=ExtResource("3_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -9)
 
-[node name="Wall_TopMiddle01" parent="Maze/OuterWalls/Top" unique_id=8240231 instance=ExtResource("3_8gbba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.25, -9)
-
 [node name="Wall_TopMiddle02" parent="Maze/OuterWalls/Top" unique_id=836805841 instance=ExtResource("3_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, -9)
 
@@ -118,3 +115,11 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0.25, 7.5)
 
 [node name="InnerWalls" type="Node3D" parent="Maze" unique_id=538740748]
+
+[node name="Top_Left" type="Node3D" parent="Maze/InnerWalls" unique_id=1216250334]
+
+[node name="TopLeft01" parent="Maze/InnerWalls/Top_Left" unique_id=8240231 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.6, 0.25, -7.5)
+
+[node name="TopLeft02" parent="Maze/InnerWalls/Top_Left" unique_id=1769981090 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.5, 0.25, -6)
