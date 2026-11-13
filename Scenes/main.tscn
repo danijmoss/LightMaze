@@ -24,7 +24,7 @@ shape = SubResource("BoxShape3D_xwulq")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=2141546462 instance=ExtResource("1_jjgbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8807068, 1, -3.9400148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2978935, 1, -8.801184)
 script = ExtResource("2_bo1nx")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1916447182]
@@ -85,9 +85,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, 9)
 [node name="BottomMiddle01" parent="Maze/OuterWalls/Bottom" unique_id=1240404987 instance=ExtResource("3_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.25, 9)
 
-[node name="BottomMiddle02" parent="Maze/OuterWalls/Bottom" unique_id=1448417821 instance=ExtResource("3_8gbba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 9)
-
 [node name="BottomRight01" parent="Maze/OuterWalls/Bottom" unique_id=798713655 instance=ExtResource("3_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, 9)
 
@@ -145,3 +142,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, 6)
 
 [node name="Left_Bottom03" parent="Maze/InnerWalls/Left_Bottom" unique_id=1355484459 instance=ExtResource("3_8gbba")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 0.25, 7.5)
+
+[node name="Middle_Top" type="Node3D" parent="Maze/InnerWalls" unique_id=211366071]
+
+[node name="Middle_Top01" parent="Maze/InnerWalls/Middle_Top" unique_id=947918057 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.5, 0.25, -3.5)
+
+[node name="Middle_Top02" parent="Maze/InnerWalls/Middle_Top" unique_id=2127317334 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.5, 0.25, -3.5)
+
+[node name="Middle_Top03" parent="Maze/InnerWalls/Middle_Top" unique_id=2057361327 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.25, -5)
+
+[node name="Middle_Top04" parent="Maze/InnerWalls/Middle_Top" unique_id=1532347562 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.25, -7.5)
+
+[node name="Middle_Mid" type="Node3D" parent="Maze/InnerWalls" unique_id=1665473174]
+
+[node name="Middle_Mid01" parent="Maze/InnerWalls/Middle_Mid" unique_id=1945381919 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5, 0.25, 4.5)
+
+[node name="Middle_Mid02" parent="Maze/InnerWalls/Middle_Mid" unique_id=540687499 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5, 0.25, 1.5)
+
+[node name="Middle_Mid03" parent="Maze/InnerWalls/Middle_Mid" unique_id=817826253 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, 0)
+
+[node name="Middle_Mid04" parent="Maze/InnerWalls/Middle_Mid" unique_id=1205952933 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, 0)
+
+[node name="Middle_Bottom" type="Node3D" parent="Maze/InnerWalls" unique_id=2098688183]
+
+[node name="BottomMiddle01" parent="Maze/InnerWalls/Middle_Bottom" unique_id=1448417821 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.25, 6)
+
+[node name="BottomMiddle02" parent="Maze/InnerWalls/Middle_Bottom" unique_id=530620077 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 6)
+
+[node name="BottomMiddle03" parent="Maze/InnerWalls/Middle_Bottom" unique_id=2095104070 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, 6)
