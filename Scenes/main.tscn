@@ -2,21 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://tmajjo8lqvn7" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://c2sn51lmrlrdb" path="res://Scripts/player.gd" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://clw5mndfe5pw4" path="res://Scenes/wall.tscn" id="3_8gbba"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xwulq"]
 size = Vector3(20, 0.5, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xwulq"]
 size = Vector3(20, 0.5, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_75tvu"]
-size = Vector3(6, 2, 0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnkce"]
-albedo_color = Color(0.03807642, 0.40533966, 0.0681306, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_75tvu"]
-size = Vector3(6, 2, 0.5)
 
 [node name="Main" type="Node" unique_id=593952978]
 
@@ -38,22 +30,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1161116856]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 0, 0)
 
-[node name="Wall" type="StaticBody3D" parent="." unique_id=9039181]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.507187, 1.25, -8.813313)
+[node name="Wall" parent="." unique_id=158485205 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.25, 0.25, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall" unique_id=900591945]
-mesh = SubResource("BoxMesh_75tvu")
-surface_material_override/0 = SubResource("StandardMaterial3D_wnkce")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=963011594]
-shape = SubResource("BoxShape3D_75tvu")
-
-[node name="Wall2" type="StaticBody3D" parent="." unique_id=1909381729]
-transform = Transform3D(-4.371139e-08, 0.104528464, 0.9945219, 0, 0.9945219, -0.104528464, -1, -4.5690842e-09, -4.3471935e-08, -9.154238, 1.25, -5.5815783)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall2" unique_id=299721776]
-mesh = SubResource("BoxMesh_75tvu")
-surface_material_override/0 = SubResource("StandardMaterial3D_wnkce")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2" unique_id=1105738975]
-shape = SubResource("BoxShape3D_75tvu")
+[node name="Wall2" parent="." unique_id=325883610 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.836792, 0.25, 3.2810059)
