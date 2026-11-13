@@ -123,3 +123,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.6
 
 [node name="TopLeft02" parent="Maze/InnerWalls/Top_Left" unique_id=1769981090 instance=ExtResource("3_8gbba")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.5, 0.25, -6)
+
+[node name="Middle_Left" type="Node3D" parent="Maze/InnerWalls" unique_id=1216541692]
+
+[node name="Middle_Left01" parent="Maze/InnerWalls" unique_id=921350896 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.25, -1.5)
+
+[node name="Middle_Left02" parent="Maze/InnerWalls" unique_id=1092272401 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -1.5)
+
+[node name="Middle_Left03" parent="Maze/InnerWalls" unique_id=1245414073 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5, 0.25, 0)
