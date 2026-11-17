@@ -10,6 +10,9 @@ size = Vector3(20, 0.5, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xwulq"]
 size = Vector3(20, 0.5, 20)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_75tvu"]
+size = Vector3(3, 2, 1.5)
+
 [node name="Main" type="Node" unique_id=593952978]
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=936259478]
@@ -208,3 +211,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, 3)
 
 [node name="Right_Bottom02" parent="Maze/InnerWalls/Right_Bottom" unique_id=300499239 instance=ExtResource("3_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.25, 3)
+
+[node name="Goal" type="Area3D" parent="." unique_id=436573090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 9.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goal" unique_id=446815531]
+shape = SubResource("BoxShape3D_75tvu")
