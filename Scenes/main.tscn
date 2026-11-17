@@ -217,3 +217,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 9.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Goal" unique_id=446815531]
 shape = SubResource("BoxShape3D_75tvu")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1837509294]
+
+[node name="Label" type="Label" parent="HUD" unique_id=425691425]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "0.00"
