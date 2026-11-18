@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cspwjo4ooonvu"]
 
 [ext_resource type="PackedScene" uid="uid://tmajjo8lqvn7" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://bngin8iobo1fn" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="Script" uid="uid://c2sn51lmrlrdb" path="res://Scripts/player.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://clw5mndfe5pw4" path="res://Scenes/wall.tscn" id="3_8gbba"]
 
@@ -14,6 +15,7 @@ size = Vector3(20, 0.5, 20)
 size = Vector3(3, 2, 1.5)
 
 [node name="Main" type="Node" unique_id=593952978]
+script = ExtResource("1_jjvhh")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=936259478]
 metadata/_edit_lock_ = true
@@ -220,7 +222,7 @@ shape = SubResource("BoxShape3D_75tvu")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1837509294]
 
-[node name="Label" type="Label" parent="HUD" unique_id=425691425]
+[node name="TimerLabel" type="Label" parent="HUD" unique_id=425691425]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
