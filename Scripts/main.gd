@@ -15,3 +15,8 @@ func _process(delta: float) -> void:
 	if running:
 		elapsed += delta
 		timer_label.text = "%.2f" % elapsed
+
+
+func _on_goal_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		running = false
