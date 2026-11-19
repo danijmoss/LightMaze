@@ -234,6 +234,7 @@ theme_override_font_sizes/font_size = 40
 text = "0.00"
 
 [node name="ResultPanel" type="VBoxContainer" parent="HUD" unique_id=1357908782]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -249,7 +250,6 @@ grow_vertical = 2
 [node name="ResultLabel" type="Label" parent="HUD/ResultPanel" unique_id=1501499448]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Finished!"
 horizontal_alignment = 1
 
 [node name="RestartLabel" type="Label" parent="HUD/ResultPanel" unique_id=1358492300]
@@ -273,3 +273,5 @@ size_flags_horizontal = 3
 text = "No"
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
+[connection signal="pressed" from="HUD/ResultPanel/ButtonRow/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="HUD/ResultPanel/ButtonRow/NoButton" to="." method="_on_no_button_pressed"]
