@@ -1,5 +1,10 @@
 extends Node
 
+# Best Time Label Variables
+static var best_time := -1.0
+@onready var best_label = $HUD/BestLabel
+
+
 # Game Timer Variables
 var elapsed = 0.0
 var running = true
@@ -10,7 +15,7 @@ var running = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	update_best_label()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,16 +26,35 @@ func _process(delta: float) -> void:
 
 
 func _on_goal_body_entered(body: Node3D) -> void:
+	
+	# Player reaches the goal
 	if body.name == "Player":
 		running = false
+		
+		# Record the best time
+		if best_time < 0 or elapsed < best_time:
+			best_time = elapsed
+			update_best_label()
+			result_label.text = "\nNew best!"
+		
 		result_panel.visible = true
 		result_label.text = "Finished! \n %.2f" % elapsed
 		$HUD/ResultPanel/ButtonRow/YesButton.grab_focus()
 
 
+func update_best_label():
+	# Only show Best Time if it exists
+	best_label.visible = best_time >= 0
+	
+	# Set Best Time Label
+	if best_time < 0:
+		best_label.text = "Best: --"
+	else:
+		best_label.text = "Best: %.2f" % best_time
+
 func _on_yes_button_pressed() -> void:
 	get_tree().reload_current_scene()
 
-
 func _on_no_button_pressed() -> void:
 	get_tree().quit()
+		

@@ -272,6 +272,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "No"
 
+[node name="BestLabel" type="Label" parent="HUD" unique_id=76794884]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -23.0
+offset_right = 26.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Best: --"
+
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
 [connection signal="pressed" from="HUD/ResultPanel/ButtonRow/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="HUD/ResultPanel/ButtonRow/NoButton" to="." method="_on_no_button_pressed"]
