@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bngin8iobo1fn" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="Script" uid="uid://c2sn51lmrlrdb" path="res://Scripts/player.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://clw5mndfe5pw4" path="res://Scenes/wall.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cih0lpssm1a1v" path="res://Scenes/sparkle.tscn" id="5_kry3j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xwulq"]
 size = Vector3(20, 0.5, 20)
@@ -285,6 +286,24 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Best: --"
+
+[node name="Sparkle" parent="." unique_id=206970683 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.145, 1, -7.389229)
+
+[node name="Sparkle2" parent="." unique_id=43780060 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.145, 1, -6.1700478)
+
+[node name="Sparkle3" parent="." unique_id=959461721 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.145, 1, -5.1700478)
+
+[node name="Sparkle4" parent="." unique_id=1420016950 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.145, 1, -5.2045045)
+
+[node name="Sparkle5" parent="." unique_id=1828559031 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.145, 1, -5.2045045)
+
+[node name="Sparkle6" parent="." unique_id=627670286 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.145, 1, -5.2045045)
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
 [connection signal="pressed" from="HUD/ResultPanel/ButtonRow/YesButton" to="." method="_on_yes_button_pressed"]
