@@ -2,7 +2,14 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+signal sparkles_collected(count)
+var sparkles := 0
+@onready var glow = $OmniLight3D
+
+func collect_sparkle():
+	sparkles += 1
+	glow.omni_range += 1.0
+	sparkles_collected.emit(sparkles)
 
 
 func _physics_process(delta: float) -> void:
