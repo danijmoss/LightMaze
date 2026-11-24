@@ -8,7 +8,7 @@ var sparkles := 0
 
 func collect_sparkle():
 	sparkles += 1
-	glow.omni_range += 1.0
+	glow.omni_range += 0.5
 	sparkles_collected.emit(sparkles)
 
 

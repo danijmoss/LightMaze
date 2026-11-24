@@ -33,7 +33,7 @@ shape = SubResource("BoxShape3D_xwulq")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=2141546462 instance=ExtResource("1_jjgbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2978935, 1, -8.801184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2978935, 1, -9.347127)
 script = ExtResource("2_bo1nx")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1916447182]
@@ -312,16 +312,16 @@ show_percentage = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.145, 1, -7.389229)
 
 [node name="Sparkle2" parent="." unique_id=43780060 instance=ExtResource("5_kry3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.145, 1, -6.1700478)
-
-[node name="Sparkle3" parent="." unique_id=959461721 instance=ExtResource("5_kry3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.145, 1, -5.1700478)
 
+[node name="Sparkle3" parent="." unique_id=959461721 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.145, 1, -5.1700478)
+
 [node name="Sparkle4" parent="." unique_id=1420016950 instance=ExtResource("5_kry3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.145, 1, -5.2045045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.145, 1, -5.2045045)
 
 [node name="Sparkle5" parent="." unique_id=1828559031 instance=ExtResource("5_kry3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.145, 1, -5.2045045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1450005, 1, -5.2045045)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=832905336]
 environment = SubResource("Environment_xwulq")

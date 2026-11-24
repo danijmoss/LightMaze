@@ -12,6 +12,12 @@ var running = true
 @onready var result_label = $HUD/ResultPanel/ResultLabel
 @onready var result_panel = $HUD/ResultPanel
 
+# Glow Gauge
+@onready var glow_gauge = $HUD/GlowGauge
+
+# Sun / Light Reference
+@onready var sun = $DirectionalLight3D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,12 +59,23 @@ func update_best_label():
 	else:
 		best_label.text = "Best: %.2f" % best_time
 
+# Yes button pressed in menu
 func _on_yes_button_pressed() -> void:
 	get_tree().reload_current_scene()
 
+# No button pressed in menu
 func _on_no_button_pressed() -> void:
 	get_tree().quit()
 	
+# Increase glow gauge when picking up sparkles	
 func _on_sparkles_collected(count):
-	$HUD/GlowGauge.value = count
-		
+	glow_gauge.value = count # set gauge value
+	if count >= glow_gauge.max_value:
+		reveal_maze()
+	
+# Reveal the maze with a camera flash
+func reveal_maze():
+	var tween := create_tween()
+	tween.tween_property(sun, "light_energy", 1.5, 0.1) # the flash
+	tween.tween_interval(2.0) # maze lit for 3 secs	
+	tween.tween_property(sun, "light_energy", 0.0, 2.0) # slow fade to black	
