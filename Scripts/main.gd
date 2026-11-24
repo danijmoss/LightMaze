@@ -15,6 +15,7 @@ var running = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Player.sparkles_collected.connect(_on_sparkles_collected)
 	update_best_label()
 
 
@@ -57,4 +58,7 @@ func _on_yes_button_pressed() -> void:
 
 func _on_no_button_pressed() -> void:
 	get_tree().quit()
+	
+func _on_sparkles_collected(count):
+	$HUD/GlowGauge.value = count
 		
