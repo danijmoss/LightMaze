@@ -1,17 +1,17 @@
 extends CharacterBody3D
 
 
-const SPEED = 6.0 
+const SPEED = 6.0	# Speed of the player
 
-signal sparkles_collected(count)
-var sparkles := 0
+signal sparkles_collected(count) # Sparkles counted
+var sparkles := 0	# Initalize sparkle count
 
-@onready var glow = $OmniLight3D
+@onready var glow = $OmniLight3D	# Select Omni Light
 @onready var start_range = glow.omni_range # used to remove glow after flash
 
-var can_move = true
+var can_move = true		# Player is able to move
 
-func collect_sparkle():
+func collect_sparkle():		# Player collects sparkles to glow
 	sparkles += 1
 	glow.omni_range += 0.5
 	sparkles_collected.emit(sparkles)
