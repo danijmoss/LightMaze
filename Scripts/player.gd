@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 8.0 
+const SPEED = 6.0 
 
 signal sparkles_collected(count)
 var sparkles := 0
