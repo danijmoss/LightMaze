@@ -1,5 +1,8 @@
 extends Node
 
+# Path to Save File
+const SAVE_PATH := "user://maze_save.cfg"
+
 # Freeze timer during the light
 var revealing := false
 
@@ -23,8 +26,10 @@ var running = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Player.sparkles_collected.connect(_on_sparkles_collected)
-	update_best_label()
+	$Player.sparkles_collected.connect(_on_sparkles_collected) # count the sparkles collected
+	load_best_time()	# load the best time
+	update_best_label()		# update the best time label
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,9 +47,10 @@ func _on_goal_body_entered(body: Node3D) -> void:
 		
 		# Record the best time
 		if best_time < 0 or elapsed < best_time:
-			best_time = elapsed
-			update_best_label()
-			result_label.text = "\nNew best!"
+			best_time = elapsed		# Get the best time
+			save_best_time() 		# Save the best time
+			update_best_label()		# Update best time lable
+			result_label.text = "\nNew best!"	# Display with new best time 
 		
 		result_panel.visible = true
 		result_label.text = "Finished! \n %.2f" % elapsed
@@ -100,3 +106,18 @@ func end_reveal():
 	glow_gauge.value = 0 	 # resets glow gauge to empty
 	$Player.sparkles = 0		 # resets sparkle collected to 0 
 	$Player.reset_glow()	# resets the glow the player has
+
+# Save the Best Time
+func save_best_time():
+	var config := ConfigFile.new()
+	config.set_value("level_1", "best_time", best_time)
+	config.save(SAVE_PATH)
+	
+# Load the Saved Best Time
+func load_best_time():
+	var config := ConfigFile.new()
+	var err = config.load(SAVE_PATH)
+	
+	# The last value found in the default
+	if err == OK:
+		best_time = config.get_value("level_1", "best_time", -1.0)
