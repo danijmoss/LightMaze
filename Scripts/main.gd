@@ -94,7 +94,7 @@ func reveal_maze():
 	# Animation for the camera flash
 	var tween := create_tween()
 	tween.tween_property(sun, "light_energy", 1.5, 0.1) # the flash
-	tween.tween_interval(1.0) # maze lit for 3 secs	
+	tween.tween_interval(1.25) # maze lit for 3 secs	
 	tween.tween_property(sun, "light_energy", 0.0, 0.5) # slow fade to black
 	tween.tween_callback(end_reveal)	
 	
