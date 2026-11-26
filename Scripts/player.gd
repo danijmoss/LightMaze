@@ -5,6 +5,7 @@ const SPEED = 5.0
 signal sparkles_collected(count)
 var sparkles := 0
 @onready var glow = $OmniLight3D
+var can_move = true
 
 func collect_sparkle():
 	sparkles += 1
@@ -13,6 +14,11 @@ func collect_sparkle():
 
 
 func _physics_process(delta: float) -> void:
+	# Check to see if the player can move 
+	if not can_move:
+		velocity = Vector3.ZERO
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
