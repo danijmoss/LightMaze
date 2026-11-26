@@ -1,9 +1,11 @@
 extends Node
 
+# Freeze timer during the light
+var revealing := false
+
 # Best Time Label Variables
 static var best_time := -1.0
 @onready var best_label = $HUD/BestLabel
-
 
 # Game Timer Variables
 var elapsed = 0.0
@@ -69,13 +71,31 @@ func _on_no_button_pressed() -> void:
 	
 # Increase glow gauge when picking up sparkles	
 func _on_sparkles_collected(count):
+	if revealing: 	# stops function early whenever reveal is aleady happening
+		return		# before it updates the gauge or starts another flash
+		
 	glow_gauge.value = count # set gauge value
 	if count >= glow_gauge.max_value:
 		reveal_maze()
 	
 # Reveal the maze with a camera flash
 func reveal_maze():
+	# Freeze 
+	revealing = true # flash shows maze
+	running = false  # pauses timer
+	$Player.can_move = false # freezes player movement
+	
+	# Animation for the camera flash
 	var tween := create_tween()
 	tween.tween_property(sun, "light_energy", 1.5, 0.1) # the flash
 	tween.tween_interval(1.0) # maze lit for 3 secs	
-	tween.tween_property(sun, "light_energy", 0.0, 0.5) # slow fade to black	
+	tween.tween_property(sun, "light_energy", 0.0, 0.5) # slow fade to black
+	tween.tween_callback(end_reveal)	
+	
+# Reset things / get things moving after freeze
+func end_reveal():
+	revealing = false  # maze can't be seen
+	running = true 	   # restarts timer
+	$Player.can_move = true  # player resumes movement
+	glow_gauge.value = 0 	 # resets glow gauge to empty
+	$Player.sparkles = 0		 # resets sparkle collected to 0 
