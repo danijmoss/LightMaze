@@ -1,10 +1,14 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 5.0 
+
 signal sparkles_collected(count)
 var sparkles := 0
+
 @onready var glow = $OmniLight3D
+@onready var start_range = glow.omni_range # used to remove glow after flash
+
 var can_move = true
 
 func collect_sparkle():
@@ -36,3 +40,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+# Reset player glow after flash happens
+func reset_glow():
+	glow.omni_range = start_range

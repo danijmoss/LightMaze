@@ -99,3 +99,4 @@ func end_reveal():
 	$Player.can_move = true  # player resumes movement
 	glow_gauge.value = 0 	 # resets glow gauge to empty
 	$Player.sparkles = 0		 # resets sparkle collected to 0 
+	$Player.reset_glow()	# resets the glow the player has
