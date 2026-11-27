@@ -23,6 +23,9 @@ var running = true
 # Sun / Light Reference
 @onready var sun = $DirectionalLight3D
 
+# Level ID 
+var level_id := "level_1"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -110,7 +113,7 @@ func end_reveal():
 # Save the Best Time
 func save_best_time():
 	var config := ConfigFile.new()
-	config.set_value("level_1", "best_time", best_time)
+	config.set_value(level_id, "best_time", best_time)
 	config.save(SAVE_PATH)
 	
 # Load the Saved Best Time
@@ -120,4 +123,4 @@ func load_best_time():
 	
 	# The last value found in the default
 	if err == OK:
-		best_time = config.get_value("level_1", "best_time", -1.0)
+		best_time = config.get_value(level_id, "best_time", -1.0)
