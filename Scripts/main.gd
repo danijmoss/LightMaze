@@ -73,7 +73,7 @@ func _on_yes_button_pressed() -> void:
 
 # No button pressed in menu
 func _on_no_button_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	
 # Increase glow gauge when picking up sparkles	
 func _on_sparkles_collected(count):
